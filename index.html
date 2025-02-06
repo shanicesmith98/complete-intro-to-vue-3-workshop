@@ -4,7 +4,34 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Playground 1.0 - Shanice Smith</title>
   </head>
-  <body></body>
+  <body>
+    <h1>Hello Frontend Masters!</h1>
+    <div id="app">
+      <p v-if="message.length % 2 === 0">Even: {{ message.toUpperCase() }}</p>
+      <p v-else>Odd: {{ message }}</p>
+      <ul>
+        <li v-for="number in listOfNumbers" :key="number">
+          {{ number }}
+        </li>
+      </ul>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      // Vue 3
+      const { createApp } = Vue
+
+      const app = createApp({
+        data() {
+          return {
+            message: 'Hello it works',
+            listOfNumbers: [1, 2, 3, 4, 5]
+          }
+        },
+      })
+
+      app.mount('#app')
+    </script>
+  </body>
 </html>
